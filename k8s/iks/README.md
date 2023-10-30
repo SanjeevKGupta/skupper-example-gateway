@@ -8,8 +8,7 @@ Be logged into your `IKS cluster` with correct context.
 
 - Copy the frontend-ingress.yaml.tmpl file
 
-- Export following ENVs for the above .yaml
-Verify ENV substitution in template file
+- Export following ENVs for the above .yaml . Verify ENV substitution in template file
 ```
 export SKPR_IKS_FRONTEND_SECRET=$(kubectl get cm ibm-cloud-cluster-ingress-info -n kube-system -o 'jsonpath={.data.ingress-secret}')
 export SKPR_IKS_FRONTEND_SUBDOMAIN=$(kubectl get cm ibm-cloud-cluster-ingress-info -n kube-system -o 'jsonpath={.data.ingress-subdomain}')
