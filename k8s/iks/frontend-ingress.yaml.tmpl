@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend
+  namespace: hello-world
+  annotations:
+    kubernetes.io/ingress.class: public-iks-k8s-nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+spec:
+  tls:
+  - hosts:
+    - $MESH_IKS_FRONTEND_HOST
+    secretName: $MESH_IKS_FRONTEND_SECRET
+  rules:
+  - host: $MESH_IKS_FRONTEND_HOST
+    http:
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: frontend
+              port:
+                number: 8080
