@@ -17,7 +17,7 @@ export SKPR_IKS_FRONTEND_HOST=frontend.$MESH_IKS_FRONTEND_SUBDOMAIN
 ```
 - Check set ENVs
 ```
-env | grep MESH
+env | grep SPKR
 ```
 - Create the .yaml file
 ```
