@@ -13,7 +13,7 @@ Verify ENV substitution in template file
 ```
 export SKPR_IKS_FRONTEND_SECRET=$(kubectl get cm ibm-cloud-cluster-ingress-info -n kube-system -o 'jsonpath={.data.ingress-secret}')
 export SKPR_IKS_FRONTEND_SUBDOMAIN=$(kubectl get cm ibm-cloud-cluster-ingress-info -n kube-system -o 'jsonpath={.data.ingress-subdomain}')
-export SKPR_IKS_FRONTEND_HOST=qotd-web.$MESH_IKS_QOTD_SUBDOMAIN
+export SKPR_IKS_FRONTEND_HOST=frontend.$MESH_IKS_QOTD_SUBDOMAIN
 ```
 - Check set ENVs
 ```
